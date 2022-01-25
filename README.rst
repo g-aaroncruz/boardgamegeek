@@ -7,7 +7,13 @@ boardgamegeek - A Python API for boardgamegeek.com
 +------------------+-----------------------------------------------------+
 
 
-Development status:
+Development status: **unmaintained**
+
+
+    To everybody sending PRs and issues: thank you for the interest in the project! Unfortunately, as it can be seen from my lack of interaction with you, I don't have the time     or energy to work on it anymore. I don't exclude coming back at some point but as of now it's pretty unlikely. Sorry. If anyone of you would like to continue, 
+    feel free to fork.
+
+
 
 ``boardgamegeek`` is a Python library which makes it easy to access data from BoardGameGeek_ using their official XML
 API.
