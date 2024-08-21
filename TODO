@@ -1,0 +1,12 @@
+#1) No sample code
+#2) Tests need to be automated or have hooks for begginers.
+#3) Getting started needs better handling since many dependancies are missing. relies on 'setuptools' 'pip', 'mock', 'pytest'
+#4) running 'main.py' doesn't work because of pathing. Need to doublecheck, because once I installed package it works... but should work without installation.
+#5) python3 boardgamegeek/main.py -c wanttoplay -u <user> - fails on query... 
+#
+#
+#
+#----------
+#WORKS
+#---------
+#python3 boardgamegeek/main.py -u <user>
