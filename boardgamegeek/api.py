@@ -500,9 +500,9 @@ class BGGCommon(object):
         return hot_items
 
     def collection(self, user_name, subtype=BGGRestrictCollectionTo.BOARD_GAME, exclude_subtype=None, ids=None, versions=None,
-                   version=None, own=None, rated=None, played=None, commented=None, trade=None, want=None, wishlist=None,
-                   wishlist_prio=None, preordered=None, want_to_play=None, want_to_buy=None, prev_owned=None,
-                   has_parts=None, want_parts=None, min_rating=None, rating=None, min_bgg_rating=None, bgg_rating=None,
+                   version=None, own=False, rated=False, played=False, commented=False, trade=False, want=False, wishlist=False,
+                   wishlist_prio=None, preordered=False, want_to_play=False, want_to_buy=False, prev_owned=False,
+                   has_parts=False, want_parts=False, min_rating=None, rating=None, min_bgg_rating=None, bgg_rating=None,
                    min_plays=None, max_plays=None, collection_id=None, modified_since=None):
         """
         Returns an user's game collection
@@ -578,28 +578,28 @@ class BGGCommon(object):
                     param = "version"
                 params[param] = int(p)
 
-        if commented is not None:
+        if commented:
             params["comment"] = int(commented)
 
         if wishlist_prio is not None:
             if 1 <= wishlist_prio <= 5:
                 params["wishlishpriority"] = wishlist_prio
             else:
-                raise BGGValueError("invalid 'wishlist_prio'")
+                raise BGGValueError("invalid 'wishlist_prio' value [1:5]")
 
-        if want_to_play is not None:
+        if want_to_play:
             params["wanttoplay"] = int(want_to_play)
 
-        if want_to_buy is not None:
+        if want_to_buy:
             params["wanttobuy"] = int(want_to_buy)
 
-        if prev_owned is not None:
+        if prev_owned:
             params["prevowned"] = int(prev_owned)
 
-        if has_parts is not None:
+        if has_parts:
             params["hasparts"] = int(has_parts)
 
-        if want_parts is not None:
+        if want_parts:
             params["wantparts"] = int(want_parts)
 
         if min_rating is not None:
