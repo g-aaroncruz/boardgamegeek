@@ -9,3 +9,7 @@ build
 *.egg-info
 _modules
 dist
+bin
+lib
+.vscode
+pyvenv.cfg
