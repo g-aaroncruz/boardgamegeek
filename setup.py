@@ -1,5 +1,3 @@
-# coding=utf-8
-
 from setuptools import find_packages, setup
 from setuptools.command.test import test as TestCommand
 
@@ -26,22 +24,19 @@ class PyTest(TestCommand):
 tests_require = ["pytest", "pytest-mock"]
 
 setup(
-    name="boardgamegeek2",
+    name="bggapi",
     version=version["__version__"],
     packages=find_packages(),
     license="BSD",
-    author="Cosmin Luță",
-    author_email="q4break@gmail.com",
+    author="Aaron Cruz",
+    author_email="g.aaroncruz@gmail.com",
     description="A Python interface to boardgamegeek.com's API",
     long_description=long_description,
-    url="https://github.com/lcosmin/boardgamegeek",
+    url="https://github.com/g-aaroncruz/boardgamegeek",
     tests_require=tests_require,
     extras_require={'test': tests_require},
     cmdclass={'test': PyTest},
     classifiers=[
-        "Programming Language :: Python",
-        "Programming Language :: Python :: 2",
-        "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.2",
         "Programming Language :: Python :: 3.3",
@@ -53,10 +48,12 @@ setup(
         "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
     ],
     install_requires=["requests>=2.3.0",
-                      "requests-cache>=0.4.4"],
+                      "requests-cache>=0.4.4",
+                      "click>=8.1.7"],
     entry_points={
         "console_scripts": [
             "boardgamegeek = boardgamegeek.main:main"
         ]
-    }
+    },
+    python_requires='>=3.0'
 )
