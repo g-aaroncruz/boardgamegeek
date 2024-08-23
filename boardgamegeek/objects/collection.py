@@ -47,6 +47,16 @@ class Collection(DictObject):
             i._format(log)
             log.info("")
 
+    def __add__(self, other):
+        if not isinstance(other, Collection):
+            raise TypeError("Can only add another Collection object")
+        # TODO: What do you do if you have the same game in both collections?
+        combined_collection = Collection(data=self._data)
+        combined_collection._Collection__game_ids = self._Collection__game_ids.union(other._Collection__game_ids)
+        combined_collection._items = self._items + other._items
+        combined_collection.__set_owner("{}+{}".format(self.owner, other.owner))
+        return combined_collection
+
     def add_game(self, game):
         """
         Add a game to the ``Collection``
@@ -84,6 +94,9 @@ class Collection(DictObject):
         :rtype: str
         """
         return self._data.get("owner")
+
+    def __set_owner(self, new_owner):
+        self._data["owner"] = new_owner
 
     @property
     def items(self):
