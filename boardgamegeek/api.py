@@ -500,9 +500,9 @@ class BGGCommon(object):
         return hot_items
 
     def collection(self, user_name, subtype=BGGRestrictCollectionTo.BOARD_GAME, exclude_subtype=None, ids=None, versions=None,
-                   version=None, own=False, rated=False, played=False, commented=False, trade=False, want=False, wishlist=False,
-                   wishlist_prio=None, preordered=False, want_to_play=False, want_to_buy=False, prev_owned=False,
-                   has_parts=False, want_parts=False, min_rating=None, rating=None, min_bgg_rating=None, bgg_rating=None,
+                   version=None, own=None, rated=None, played=None, commented=None, trade=None, want=None, wishlist=None,
+                   wishlist_prio=None, preordered=None, want_to_play=None, want_to_buy=None, prev_owned=None,
+                   has_parts=None, want_parts=None, min_rating=None, rating=None, min_bgg_rating=None, bgg_rating=None,
                    min_plays=None, max_plays=None, collection_id=None, modified_since=None):
         """
         Returns an user's game collection
